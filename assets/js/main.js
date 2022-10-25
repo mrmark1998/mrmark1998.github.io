@@ -1,15 +1,60 @@
+let code = new Boolean(false)
+showCode = () => {
+  if (code == false) {
+    document.getElementById("code").innerHTML=`<br>
+      <button>Java</button> 
+      <button>C++</button> 
+      <button>JavaScript</button> 
+      <button>HTML</button> 
+      <button>CSS</button> <br><br>
+      <button>SQL</button> 
+      <button>MATLAB</button> 
+      <button>Visual Basic</button> 
+      <button>PHP</button>
+      `
+    code = true;
+  } else {
+    document.getElementById("code").innerHTML=''
+    code = false;
+  }
+}
+
+let handy = new Boolean(false)
+showHandy = () => {
+  if (handy == false) {
+    document.getElementById("handy").innerHTML=`<br>
+      <button>Plumbing</button> 
+      <button>Electrical</button> 
+      <button>Drywall</button> 
+      <button>Flooring</button> 
+      <button>Construction</button>  <br><br>
+      <button>Repairs</button>
+      <button>Painting</button> 
+      <button>Remodeling</button> 
+      <button>Power Tools</button> 
+      <button>Hand Tools</button>  <br><br>
+      <button>HVAC</button> 
+      <button>Roofing</button> 
+      `
+      handy = true;
+  } else {
+    document.getElementById("handy").innerHTML=''
+    handy = false;
+  }
+}
+
+
 let music = new Boolean(false)
 playMusic = () => {
   if (music == false) {
     document.getElementById("soundcloud").innerHTML='<p><br><div><a href="https://soundcloud.com/michael-mark-829916267/sets/wendy-and-michaels-piano-cd" title="Wendy and Michael&#x27;s Piano CD" target="_blank" style="text-decoration: none;"><h3>Relax and Enjoy My Music</h3></a></div><iframe width="65%" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/547983393&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe></p>'
     music = true;
-    console.log(music)
   } else {
     document.getElementById("soundcloud").innerHTML=''
     music = false;
-    console.log(music)
   }
 }
+
 (function() {
   "use strict";
 
