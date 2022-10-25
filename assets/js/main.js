@@ -1,16 +1,17 @@
 let code = new Boolean(false)
 showCode = () => {
   if (code == false) {
-    document.getElementById("code").innerHTML=`<br>
+    document.getElementById("code").innerHTML=`<div class="buttons"><br>
       <button>Java</button> 
       <button>C++</button> 
-      <button>JavaScript</button> 
+      <button>C</button> 
+      <button>JavaScript</button><br>
       <button>HTML</button> 
-      <button>CSS</button> <br><br>
-      <button>SQL</button> 
+      <button>CSS</button> 
+      <button>SQL</button> <br>
       <button>MATLAB</button> 
       <button>Visual Basic</button> 
-      <button>PHP</button>
+      <button>PHP</button></div>
       `
     code = true;
   } else {
@@ -22,19 +23,16 @@ showCode = () => {
 let handy = new Boolean(false)
 showHandy = () => {
   if (handy == false) {
-    document.getElementById("handy").innerHTML=`<br>
+    document.getElementById("handy").innerHTML=`<div class="buttons"><br>
       <button>Plumbing</button> 
       <button>Electrical</button> 
       <button>Drywall</button> 
       <button>Flooring</button> 
-      <button>Construction</button>  <br><br>
-      <button>Repairs</button>
-      <button>Painting</button> 
-      <button>Remodeling</button> 
-      <button>Power Tools</button> 
-      <button>Hand Tools</button>  <br><br>
+      <button>Roofing</button> </a><br>
       <button>HVAC</button> 
-      <button>Roofing</button> 
+      <button>Construction</button> 
+      <button>Painting</button> 
+      <button>Power Tools</button> <br>
       `
       handy = true;
   } else {

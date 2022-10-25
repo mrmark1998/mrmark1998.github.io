@@ -352,6 +352,22 @@ h6 {
   }
 }
 
+.buttons button {
+  background-color: #00000026;
+  border: none;
+  color: rgb(0, 0, 0);
+  margin: 2px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.buttons button:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -479,7 +495,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
