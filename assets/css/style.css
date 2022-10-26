@@ -1231,9 +1231,8 @@ section {
 
 #footer .copyright {
   margin: 0 0 5px 0;
-  position: absolute;
+  position:sticky;
   bottom: 0px;
-  text-align: center;
 }
 
 #footer .credits {
