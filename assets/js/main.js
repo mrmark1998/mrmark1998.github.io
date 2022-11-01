@@ -3,12 +3,13 @@ showCode = () => {
   if (code == false) {
     document.getElementById("code").innerHTML=`<div class="buttons"><br>
       <button>Java</button> 
-      <button>C++</button> 
       <button>C</button> 
+      <button>C#</button> 
+      <button>C++</button> 
       <button>JavaScript</button><br>
       <button>HTML</button> 
       <button>CSS</button> 
-      <button>SQL</button> <br>
+      <button>MySQL</button> <br>
       <button>MATLAB</button> 
       <button>Visual Basic</button> 
       <button>PHP</button></div>
