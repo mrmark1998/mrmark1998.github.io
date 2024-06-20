@@ -175,4 +175,32 @@ div#home_search form fieldset.price input {
     div#home_search form fieldset.price input {
         width: 392px; /* Full width */
     }
+    
+}
+
+/* New media query for screens smaller than 576px (typical smartphones in portrait mode) */
+@media (max-width: 576px) {
+    form#prop_search {
+        max-width: 90%;
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    form#prop_search input[type="text"],
+    form#prop_search select,
+    form#prop_search button,
+    form#prop_search input[type="submit"] {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+    form#prop_search .rooms {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Increase gap for smaller screens */
+    }
+    form#prop_search .multisearch input,
+    form#prop_search .rooms select,
+    form#prop_search .rooms input[type="text"] {
+        width: 100%; /* Ensure elements take full width on smaller screens */
+    }
+
+
 }
