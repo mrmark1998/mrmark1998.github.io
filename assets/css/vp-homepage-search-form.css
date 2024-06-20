@@ -1,0 +1,178 @@
+/* Base styling */
+#home_search {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+form#prop_search {
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+form#prop_search input[type="text"],
+form#prop_search select,
+form#prop_search button,
+form#prop_search input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+form#prop_search input[type="text"]::placeholder {
+    color: #999;
+}
+
+form#prop_search button,
+form#prop_search input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+form#prop_search button:hover,
+form#prop_search input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form#prop_search .to_advanced a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+form#prop_search .to_advanced.centered {
+    justify-content: center;
+}
+
+form#prop_search .to_advanced a:hover {
+    background-color: #23272b;
+}
+
+form#prop_search .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+form#prop_search .rooms {
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+}
+
+form#prop_search .to_advanced {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    form#prop_search {
+        flex-direction: column;
+    }
+
+    form#prop_search .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form#prop_search .to_advanced {
+        justify-content: center;
+    }
+}
+
+
+form#prop_search .multisearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+form#prop_search .multisearch input {
+    flex-grow: 1;  /* Add flex-grow to make the input fill the rest of the row */
+    margin-right: 10px;
+}
+
+/* General styles for room select fields */
+div#home_search form fieldset.rooms select {
+    width: 70px;
+}
+
+div#home_search form fieldset.rooms select#listing_has_vt {
+    width: 103px;
+}
+
+/* Styles for screens smaller than 780px */
+@media only screen and (max-width: 780px) {
+    div#home_search form fieldset.rooms select,
+    div#home_search form fieldset.rooms select#listing_has_vt {
+        width: 126px;
+    }
+}
+
+/* Styles for screens smaller than 500px */
+@media only screen and (max-width: 500px) {
+    div#home_search form fieldset.rooms select {
+        width: 114px;
+    }
+    
+    div#home_search form fieldset.rooms select#listing_has_vt {
+        width: 236px;
+        margin-top: 12px;
+    }
+    
+    div#home_search form fieldset.multisearch input,
+    div#home_search form fieldset.price input {
+        width: 236px;
+    }
+}
+
+/* Styles for screens larger than 1080px */
+@media only screen and (min-width: 1080px) {
+    div#home_search form fieldset.rooms select {
+        width: 80px;
+    }
+    
+    div#home_search form fieldset.rooms select#listing_has_vt {
+        width: 142px;
+    }
+    
+    div#home_search form fieldset.price input {
+        width: 110px;
+    }
+}
+
+/* General styles for price input field */
+div#home_search form fieldset.price input {
+    width: 90px; /* Default width */
+}
+
+/* Styles for screens smaller than 780px for price input field */
+@media only screen and (max-width: 780px) {
+    div#home_search form fieldset.price input {
+        width: 392px; /* Full width */
+    }
+}

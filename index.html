@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -27,6 +29,17 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- CSS for the Real Estate Search form -->
+  <link href="assets/css/vp-homepage-search-form.css" rel="stylesheet">
+  <script>
+    function setSphinxCombo() {
+      // Get the value from SPHINX_COMBO_DESC field
+      var sphinxComboDescValue = document.getElementById('sphinx_combo_search').value;
+
+      // Set the value of SPHINX_COMBO field
+      document.getElementById('sphinx_combo').value = sphinxComboDescValue;
+    }
+  </script>
 </head>
 
 <body>
@@ -40,26 +53,32 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#real-estate" class="nav-link scrollto"><i class="bx bx-buildings"></i> <span>Real
+              Estate</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
+        </li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Michael Mark</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Engineer, Handyman, Pianist"></span></p>
+      <p>I'm <span class="typed" data-typed-items="REALTOR®, Software Engineer, Web Developer, Musician"></span></p>
       <div class="social-links">
-        <a href="#" class="twitter"><i onclick="showCode();return false;" class="bi bi-code-square" title="Code Languages"></i></a>
-        <a href="#" class="instagram"><i onclick="showHandy();return false;" class="bi bi-tools" title="Handyman Skills"></i></a>
-        <a href="#" class="google-plus"><i onclick="playMusic();return false;" class="bi bi-music-note-beamed" title="Play Music"></i></a>
+        <a href="#"><img onclick="showRealEstate();return false;" src="./assets/img/real-estate-one-glb-transparent.png"
+            height="40" title="Real Estate One" /></a>
+        <a href="#"><i onclick="showCode();return false;" class="bi bi-code-square" title="Code Languages"></i></a>
+        <a href="#"><i onclick="showHandy();return false;" class="bi bi-tools" title="Handyman Skills"></i></a>
+        <a href="#"><i onclick="playMusic();return false;" class="bi bi-music-note-beamed" title="Play Music"></i></a>
         <a href="https://github.com/mrmark1998" class="linkedin"><i class="bx bi-github" title="GitHub"></i></a>
-        <a href="https://www.linkedin.com/in/mikemark66/" class="linkedin"><i class="bx bxl-linkedin" title="LinkedIn"></i></a>
+        <a href="https://www.linkedin.com/in/mikemark66/" class="linkedin"><i class="bx bxl-linkedin"
+            title="LinkedIn"></i></a>
+        <div id="realestate"></div>
         <div id="code"></div>
         <div id="handy"></div>
         <div id="soundcloud"></div>
@@ -69,6 +88,117 @@
 
   <main id="main">
 
+    <!-- ======= REAL ESTATE Section ======= -->
+    <section id="real-estate">
+      <div class="section-title">
+        <h2>Find your dream home</h2>
+        <p>
+          Let me help you find the home of your dreams. <a href="#contact">Contact Me</a>
+          to set up a showing.
+        </p>
+      </div>
+      <div id="home_search" class="homepage-main">
+        <form method="post" action="https://www.realestateone.com/homes-for-sale/Search" id="prop_search"
+          class="runsearch" onsubmit="setSphinxCombo()" target="_blank">
+          <input type="hidden" name="TLATE" value="true" />
+          <input type="hidden" name="ScreenID_Cur" value="SEARCH_LISTING_LP" />
+          <input type="hidden" name="ScreenID" value="ListingSummary_Public" />
+          <input type="hidden" name="ScreenID_Alt" value="LISTING_DETAIL_P" />
+          <input type="hidden" name="scoped" value="Y" />
+          <input type="hidden" name="LOGSEARCH" value="TRUE" />
+          <input type="hidden" name="SITE" value="REO" />
+          <input type="hidden" name="Search" value="True" />
+          <input type="hidden" name="EXCEEDLIMIT" value="Y" />
+          <input type="hidden" name="fg_SummaryCntl" value="Y" />
+          <input type="hidden" name="sd" value="S2" class="skipCount" />
+          <input type="hidden" name="cd_Page" value="SEARCH_LISTING_P" />
+          <input type="hidden" name="sortCriteria" id="sortCriteria" value="lsearch_amt_search_price DESC" />
+          <input type="hidden" name="Search_Page" value="SEARCH_LISTING_P" />
+          <input type="hidden" name="SEARCH_PAGE" value="SEARCH_LISTING_P" />
+          <input type="hidden" name="LC1_V14C" id="lc1_v14c" value="" />
+          <input type="hidden" name="LSEARCH_DT_LISTING_PRICECHG_CALC_DAYS_HIGH"
+            id="lsearch_dt_listing_pricechg_calc_days_high" value="" />
+          <input type="hidden" name="LC4_V42C" id="short_sales" value="" />
+          <input type="hidden" name="LC1_V12C" id="lc1_v12c" value="" />
+          <input type="hidden" name="LSC_CD_PRESENTATION" value="P" />
+          <input type="hidden" name="LSEARCH_FG_PUBLIC" id="LSEARCH_FG_PUBLIC" value="1" />
+          <input type="hidden" name="SEARCH_NAME" value="SEARCH_LISTING_PQUICK" />
+          <input type="hidden" name="SPHINX_COMBO" id="sphinx_combo" value="" />
+          <input type="hidden" name="SPHINX_COMBO_DESC" id="sphinx_combo_desc" value="" />
+          <input type="hidden" name="sortCriteria" value="lsearch_amt_search_price DESC" />
+
+          <div class="row">
+            <fieldset class="multisearch">
+              <input name="SPHINX_COMBO_SEARCH" id="sphinx_combo_search" type="text"
+                placeholder="Enter Address, City, County, Zip, or MLS#"
+                aria-label="Enter Address, City, County, Zip, or MLS#" />
+              <button aria-label="View Listings Button" id="submit_btn" type="submit" name="submit">View
+                Listings</button>
+            </fieldset>
+          </div>
+
+          <div class="row">
+            <fieldset class="rooms">
+              <select aria-label="Bedrooms" name="LS_NO_BEDROOMS" id="ls_no_bedrooms">
+                <option label="Beds" value="">Beds</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+              <select aria-label="Bathrooms" name="LS_NO_BATHROOMS_LOW" id="ls_no_bathrooms_low">
+                <option label="Baths" value="">Baths</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+              <select aria-label="Virtual tour" name="LISTING_HAS_VT" id="listing_has_vt">
+                <option label="Virtual Tour" value="">Virtual Tour</option>
+                <option value="Y">Yes</option>
+                <option value="N/A">N/A</option>
+              </select>
+              <input type="text" name="LSEARCH_AMT_SEARCH_PRICE_HIGH" id="lsearch_amt_search_price_high"
+                placeholder="Max Price" aria-label="Max Price" />
+
+              <a href="https://www.realestateone.com//homesearch" title="More Options" class="button"
+                target="_blank">More Options</a>
+            </fieldset>
+          </div>
+
+          <div class="row">
+            <fieldset class="to_advanced centered">
+              <a class="inverseColor"
+                href="https://www.realestateone.com//homes-for-sale/Coming+Soon_list-status/MILANSING_source-not/nts_12/sd_S2/sc_lsearch_amt_search_price%2BDESC/"
+                title="View Coming Soon Listings" target="_blank">View Coming Soon Listings</a>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
@@ -76,7 +206,13 @@
         <div class="section-title">
           <h2>About</h2>
           <p>
-            Leet software developer, artistic web designer, skillful handyman, and passionate musician.  I earned my Computer Science and Information Systems masters degree from Saginaw Valley State University and an Industrial and Operations Engineering degree for my ungraduate study at the University of Michigan. An organized and quick learner, I am able to adapt and push the barriers with my DIY attitude. I have many portfolio projects, all a conglomeration of handyman remodeling work, software projects, and websites that I have created and maintained.</p>
+            Professional REALTOR®, leet software developer, artistic web designer, and passionate musician. I earned my
+            Computer Science and Information Systems masters degree from Saginaw Valley State University and an
+            Industrial and Operations Engineering degree for my ungraduate study at the University of Michigan. An
+            organized and quick learner, I am able to adapt and push the barriers with my DIY attitude. I have many
+            portfolio projects, all a conglomeration of handyman remodeling work, software projects, and websites that I
+            have created and maintained.
+          </p>
         </div>
 
         <div class="row">
@@ -86,27 +222,37 @@
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Software Developer, Web Developer, Handyman, &amp; Musician</h3>
             <p class="fst-italic">
-              Currently seeking a position in software development to further pursue a career related to Computer Science
+              Currently seeking a position in software development to further pursue a career related to Computer
+              Science
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Master's Degree:</strong> <span>Computer Science and Information Systems</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span><a href="www.linkedin.com/in/mikemark66">linkedin.com/in/mikemark66</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Master's Degree:</strong> <span>Computer Science and
+                      Information Systems</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span><a
+                        href="https://www.linkedin.com/in/mikemark66/" target="_blank">linkedin.com/in/mikemark66</a></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>MI, USA</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Undergraduate Degree:</strong> <span>Industrial Operations Engineering</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Porfolio Website:</strong> <span><a href="https://mrmark1998.github.io">mrmark1998.github.io</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span><a href="https://github.com/mrmark1998">github.com/mrmark1998</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="#contact">Contact Me</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Undergraduate Degree:</strong> <span>Industrial
+                      Operations Engineering</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Porfolio Website:</strong> <span><a
+                        href="https://mrmark1998.github.io" target="_blank">mrmark1998.github.io</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span><a
+                        href="https://github.com/mrmark1998" target="_blank">github.com/mrmark1998</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="#contact">Contact
+                        Me</a></span></li>
                 </ul>
               </div>
             </div>
-            <p>I am a gamer at heart. Also a nerd. But those things don't make me unrealistic of course.  I live up to all my past and responsibilities and can say that I have accomplished so much in my life already. I have learned skills that I have never dreamed of learning.</p>
-            <p>Coding, drywalling, painting, playing Chopin's most beautiful Ballades, and creating amazing webpages, I feel like I still have so much more to learn. </p>
+            <p>I am a gamer at heart. Also a nerd. But those things don't make me unrealistic of course. I live up to
+              all my past and responsibilities and can say that I have accomplished so much in my life already. I have
+              learned skills that I have never dreamed of learning.</p>
+            <p>Coding, drywalling, painting, playing Chopin's most beautiful Ballades, and creating amazing webpages, I
+              feel like I still have so much more to learn. </p>
           </div>
         </div>
 
@@ -127,7 +273,8 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Coding Languages</p>
             </div>
           </div>
@@ -135,7 +282,8 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>5-Star Badges in HackerRank</p>
             </div>
           </div>
@@ -143,7 +291,8 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Kyu Rank in CodeWars</p>
             </div>
           </div>
@@ -151,7 +300,8 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Houses Remodeled</p>
             </div>
           </div>
@@ -176,34 +326,39 @@
             <div class="progress">
               <span class="skill">HTML <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
             <div class="progress">
               <span class="skill">JavaScript <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">CSS <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">Bootstrap/WordPress/CMS <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">SQL <i class="val">60%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
@@ -214,35 +369,40 @@
             <div class="progress">
               <span class="skill">Java <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">C++ <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">C# <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">MATLAB <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
             <div class="progress">
               <span class="skill">Visual Basic <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
@@ -250,7 +410,8 @@
             <div class="progress">
               <span class="skill">PHP <i class="val">50%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
               </div>
             </div>
 
@@ -267,7 +428,8 @@
 
         <div class="section-title">
           <h2>Resume</h2>
-          <p>Here is my resume for your viewing pleasure.  I will come back and update this every so often.  You can also <a href="assets/misc/Mark_Resume_2.pdf">download the PDF version here</a>.
+          <p>Here is my resume for your viewing pleasure. I will come back and update this every so often. You can also
+            <a href="/assets/misc/Mark_Resume.pdf">download the PDF version here</a>.
           </p>
         </div>
 
@@ -276,7 +438,9 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Michael Mark</h4>
-              <p><em>Motivated and hard-working, I am seeking a position in software development to further expand my career with my Computer Science and Information Systems masters degree. An organized and quick learner, I am able to adapt and push the barriers with my DIY attitude.</em></p>
+              <p><em>Motivated and hard-working, I am seeking a position in software development to further expand my
+                  career with my Computer Science and Information Systems masters degree. An organized and quick
+                  learner, I am able to adapt and push the barriers with my DIY attitude.</em></p>
               <ul>
                 <li>Saginaw, MI</li>
                 <li>Phone# and email hidden - <a href="#contact">Contact me here.</a></li>
@@ -286,13 +450,15 @@
             <h3 class="resume-title">Skills</h3>
             <div class="resume-item">
               <h4>Languages</h4>
-              <h5>Java, JavaScript, C#, C++, MATLAB, HTML, CSS, PHP, Visual Basic, SQL</h5>
-              <p><em>Familiar: Python, C</em></p>
+              <h5>C#, C, C++, Java, JavaScript, MATLAB, Python, Visual Basic, HTML/CSS/PHP, SQL</h5>
             </div>
             <div class="resume-item">
               <h4>Platforms</h4>
-              <h5>Eclipse IDE, Visual Studio, MATLAB, Microsoft: [Excel, Word, PowerPoint, Access], Adobe: [Premiere, Photoshop, Acrobat, XD], Git, GitHub</h5>
-              <p><em>Familiar: CAD software, Maple</em></p>
+              <h5>Visual Studio Professional 2022, VS Code, Eclipse IDE, MATLAB, Microsoft Suite</h5>
+            </div>
+            <div class="resume-item">
+              <h4>Environments / Frameworks</h4>
+              <h5>Git, GitHub, Azure DevOps, .NET 8, ASP.NET Core MVC, WPF, IBM EWM</h5>
             </div>
 
             <h3 class="resume-title">Education</h3>
@@ -300,7 +466,6 @@
               <h4>MS of Computer Science &amp; Information Systems</h4>
               <h5>2019 - 2021</h5>
               <p><em>Saginaw Valley State University, Saginaw, MI</em></p>
-              <p>3.971/4.0 GPA</p>
             </div>
             <div class="resume-item">
               <h4>BSE of Industrial &amp; Operations Engineering</h4>
@@ -313,51 +478,45 @@
           <div class="col-lg-6">
             <h3 class="resume-title">Experience</h3>
             <div class="resume-item">
+              <h4>Nexteer</h4>
+              <h5>December 2022 – Present</h5>
+              <p><em>Embedded Software Engineer II</em></p>
+              <ul>
+                <li>Utilized MATLAB and Simulink to create Design Models for AUTOSAR embedded components related to
+                  steering
+                <li>Hand-wrote SWIFT-level code in C based on Design Requirements and tested the code with bug finder
+                  and code prover
+                <li>Performed both testing and simulation using MIL and SIL tools to verify the integrity between model
+                  and code
+                <li>Maintained and updated internal tools and libraries by addressing inquiries and releasing new
+                  updates with documentation
+                <li>Developed a tools in C# ASP.NET Core MVC and WPF to standardize several processes
+              </ul>
+            </div>
+            <div class="resume-item">
               <h4>PATHSIM</h4>
               <h5>April 2020 – May 2021</h5>
               <p><em>Contact Tracing via Cell Phone LTE log data</em></p>
               <ul>
-                <li>Worked together as a team to create realistic contact tracing using only LTE log data to preserve user privacy</li>
-                <li>Used algorithms to optimize path finding, such as Dijkstra’s algorithm, Binary Matrices, and the A* method</li>
+                <li>Worked together as a team to create realistic contact tracing using only LTE log data to preserve
+                  user privacy</li>
+                <li>Used algorithms to optimize path finding, such as Dijkstra’s algorithm, Binary Matrices, and the A*
+                  method</li>
                 <li>Simulated 1000 paths in multiple tests using only LTE log data</li>
-                <li>Mainly coded using MATLAB but also used Java, C++, and Python for algorithm testing and optimization</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>MeetMinder</h4>
-              <h5>Fall 2021</h5>
-              <ul>
-                <li>Lead a team through Software Planning, Case Analysis, Requirements (SRS), and Prototype Designing stages</li>
-                <li>Created entire app prototype and flowchart with Adobe XD</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Calculus Quiz App</h4>
-              <h5>September 2022 - Present</h5>
-              <ul>
-                <li>Created quiz app to aid tutoring for AP Calculus which can store up to 5 high scores for multiple quizzes</li>
-                <li>Used my own CSS elements and coded the app with JavaScript, JSON, and HTML that also work on mobile</li>
-                <li>Modified the code to fetch API from large online trivia database to create a random quiz</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Morley</h4>
-              <h5>July 2018 – July 2020</h5>
-              <p><em>General Motors Repurchase Coordinator</em></p>
-              <ul>
-                <li>Handled vehicle repurchases for GM customers going through Lemon Law buybacks</li>
-                <li>Obtained Agent of the Month twice, working over 60 cases simultaneously with a >90% approval rating</li>
-                <li>Promoted from Roadside Assistance to Premium, then upgraded to Repurchase Coordinator within 1 year</li>
+                <li>Mainly coded using MATLAB but also used Java, C++, and Python for algorithm testing and optimization
+                </li>
               </ul>
             </div>
             <div class="resume-item">
               <h4>Self-Employed Landlord</h4>
               <h5>2009 – Present</h5>
               <ul>
-                <li>Invested in over 35 investment properties in the Saginaw County area after the 2008 Mortgage Crisis</li>
+                <li>Invested in over 35 investment properties in the Saginaw County area after the 2008 Mortgage Crisis
+                </li>
                 <li>Quickly learned carpentry, plumbing, and electrical skills for remodeling and repairs</li>
                 <li>Joined the Saginaw Landlords Association in 2015 and screened all tenants meticulously</li>
-                <li>Learned everything about real estate, including obtaining REALTOR licensure under Berkshire Hathaway</li>
+                <li>Learned everything about real estate, including obtaining REALTOR licensure under Berkshire Hathaway
+                </li>
                 <li>Gained access to the entire Michigan Multiple Listing Service system (MLS) – better than Zillow</li>
               </ul>
             </div>
@@ -403,8 +562,10 @@
                 <h4>PATHSIM</h4>
                 <p>Thesis</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/Pathsim1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pathsim"><i class="bx bx-plus"></i></a>
-                  <a href="pathsim-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/Pathsim1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Pathsim"><i class="bx bx-plus"></i></a>
+                  <a href="pathsim-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -417,8 +578,10 @@
                 <h4>Wendy Chu Piano</h4>
                 <p>Website</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/wendy.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Wendy Chu Piano"><i class="bx bx-plus"></i></a>
-                  <a href="https://wendychupiano.com" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/wendy.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Wendy Chu Piano"><i class="bx bx-plus"></i></a>
+                  <a href="https://wendychupiano.com" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -431,8 +594,10 @@
                 <h4>Paint House</h4>
                 <p>Spray Painting</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/01.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Spray Paint"><i class="bx bx-plus"></i></a>
-                  <a href="0-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/01.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Spray Paint"><i class="bx bx-plus"></i></a>
+                  <a href="0-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -445,8 +610,10 @@
                 <h4>Calc Quiz</h4>
                 <p>Quiz App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/calcQuiz1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Calc Quiz"><i class="bx bx-plus"></i></a>
-                  <a href="/calcQuiz/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/calcQuiz1.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Calc Quiz"><i class="bx bx-plus"></i></a>
+                  <a href="/calcQuiz/" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -459,8 +626,10 @@
                 <h4>Sheet Library</h4>
                 <p>JavaFX Project</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/sheet1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Sheet Library"><i class="bx bx-plus"></i></a>
-                  <a href="sheetlibrary-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/sheet1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Sheet Library"><i class="bx bx-plus"></i></a>
+                  <a href="sheetlibrary-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -473,8 +642,10 @@
                 <h4>Cabinets</h4>
                 <p>Repaint</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="1-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="1-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -487,8 +658,10 @@
                 <h4>Refinishing</h4>
                 <p>Hardwood Stairs</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/21.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="2-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/21.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="2-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -501,87 +674,96 @@
                 <h4>MMMTA.org</h4>
                 <p>Website</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/mmmta.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MMMTA.org"><i class="bx bx-plus"></i></a>
-                  <a href="https://mmmta.org" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/portfolio/mmmta.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="MMMTA.org"><i class="bx bx-plus"></i></a>
+                  <a href="https://mmmta.org" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-        
-        <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/31.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Epoxying</h4>
-              <p>Basement Floor</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/31.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Epoxy"><i class="bx bx-plus"></i></a>
-                <a href="3-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/31.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Epoxying</h4>
+                <p>Basement Floor</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/31.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Epoxy"><i class="bx bx-plus"></i></a>
+                  <a href="3-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/41.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Painting</h4>
+                <p>Attic</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/41.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Painting"><i class="bx bx-plus"></i></a>
+                  <a href="4-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-software">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/binary.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Binary Calculator</h4>
+                <p>Challenge</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/binary.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Binary Calculator"><i class="bx bx-plus"></i></a>
+                  <a href="BinaryCalculator/" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/51.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Building</h4>
+                <p>Basement Stairs</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/51.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Building Stairs"><i class="bx bx-plus"></i></a>
+                  <a href="5-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/71.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>More Flooring</h4>
+                <p>Flooring Galore</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/71.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Flooring"><i class="bx bx-plus"></i></a>
+                  <a href="7-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/41.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Painting</h4>
-              <p>Attic</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/41.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Painting"><i class="bx bx-plus"></i></a>
-                <a href="4-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-software">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/binary.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Binary Calculator</h4>
-              <p>Challenge</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/binary.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Binary Calculator"><i class="bx bx-plus"></i></a>
-                <a href="BinaryCalculator/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/51.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Building</h4>
-              <p>Basement Stairs</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/51.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Building Stairs"><i class="bx bx-plus"></i></a>
-                <a href="5-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-handy">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/71.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>More Flooring</h4>
-              <p>Flooring Galore</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/71.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Flooring"><i class="bx bx-plus"></i></a>
-                <a href="7-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
     </section><!-- End Portfolio Section -->
-
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -589,6 +771,7 @@
 
         <div class="section-title">
           <h2>Contact</h2>
+          <p>Please use this contact form to contact me or email me directly at the email address listed below.</p>
         </div>
 
         <div class="row mt-1">
@@ -604,7 +787,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>Use contact form</p>
+                <p><a href="mailto:mrmark1998@gmail.com">mrmark1998@gmail.com</a></p>
               </div>
 
               <div class="phone">
@@ -612,115 +795,100 @@
                 <h4>Call:</h4>
                 <p>Use contact form</p>
               </div>
-
             </div>
-
           </div>
 
+          <!-- Jot Form -->
           <div class="col-lg-8 mt-5 mt-lg-0">
-
-             
-    <iframe
-    id="JotFormIFrame-222970931288161"
-    title="Contact Form"
-    onload="window.parent.scrollTo(0,0)"
-    allowtransparency="true"
-    allowfullscreen="true"
-    allow="geolocation; microphone; camera"
-    src="https://form.jotform.com/222970931288161"
-    frameborder="0"
-    style="
+            <iframe id="JotFormIFrame-222970931288161" title="Contact Form" onload="window.parent.scrollTo(0,0)"
+              allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera"
+              src="https://form.jotform.com/222970931288161" frameborder="0" style="
     min-width: 100%;
     height:539px;
-    border:none;"
-    scrolling="no"
-  >
-  </iframe>
-  <script type="text/javascript">
-    var ifr = document.getElementById("JotFormIFrame-222970931288161");
-    if (ifr) {
-      var src = ifr.src;
-      var iframeParams = [];
-      if (window.location.href && window.location.href.indexOf("?") > -1) {
-        iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-      }
-      if (src && src.indexOf("?") > -1) {
-        iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-        src = src.substr(0, src.indexOf("?"))
-      }
-      iframeParams.push("isIframeEmbed=1");
-      ifr.src = src + "?" + iframeParams.join('&');
-    }
-    window.handleIFrameMessage = function(e) {
-      if (typeof e.data === 'object') { return; }
-      var args = e.data.split(":");
-      if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-      if (!iframe) { return; }
-      switch (args[0]) {
-        case "scrollIntoView":
-          iframe.scrollIntoView();
-          break;
-        case "setHeight":
-          iframe.style.height = args[1] + "px";
-          break;
-        case "collapseErrorPage":
-          if (iframe.clientHeight > window.innerHeight) {
-            iframe.style.height = window.innerHeight + "px";
-          }
-          break;
-        case "reloadPage":
-          window.location.reload();
-          break;
-        case "loadScript":
-          if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
-          var src = args[1];
-          if (args.length > 3) {
-              src = args[1] + ':' + args[2];
-          }
-          var script = document.createElement('script');
-          script.src = src;
-          script.type = 'text/javascript';
-          document.body.appendChild(script);
-          break;
-        case "exitFullscreen":
-          if      (window.document.exitFullscreen)        window.document.exitFullscreen();
-          else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
-          else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
-          else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
-          else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
-          break;
-      }
-      var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-      if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-        var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
-        iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
-      }
-    };
-    window.isPermitted = function(originUrl, whitelisted_domains) {
-      var url = document.createElement('a');
-      url.href = originUrl;
-      var hostname = url.hostname;
-      var result = false;
-      if( typeof hostname !== 'undefined' ) {
-        whitelisted_domains.forEach(function(element) {
-            if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
-                result = true;
-            }
-        });
-        return result;
-      }
-    };
-    if (window.addEventListener) {
-      window.addEventListener("message", handleIFrameMessage, false);
-    } else if (window.attachEvent) {
-      window.attachEvent("onmessage", handleIFrameMessage);
-    }
-    </script>
-
+    border:none;" scrolling="no">
+            </iframe>
+            <script type="text/javascript">
+              var ifr = document.getElementById("JotFormIFrame-222970931288161");
+              if (ifr) {
+                var src = ifr.src;
+                var iframeParams = [];
+                if (window.location.href && window.location.href.indexOf("?") > -1) {
+                  iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+                }
+                if (src && src.indexOf("?") > -1) {
+                  iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+                  src = src.substr(0, src.indexOf("?"))
+                }
+                iframeParams.push("isIframeEmbed=1");
+                ifr.src = src + "?" + iframeParams.join('&');
+              }
+              window.handleIFrameMessage = function (e) {
+                if (typeof e.data === 'object') { return; }
+                var args = e.data.split(":");
+                if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+                if (!iframe) { return; }
+                switch (args[0]) {
+                  case "scrollIntoView":
+                    iframe.scrollIntoView();
+                    break;
+                  case "setHeight":
+                    iframe.style.height = args[1] + "px";
+                    break;
+                  case "collapseErrorPage":
+                    if (iframe.clientHeight > window.innerHeight) {
+                      iframe.style.height = window.innerHeight + "px";
+                    }
+                    break;
+                  case "reloadPage":
+                    window.location.reload();
+                    break;
+                  case "loadScript":
+                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
+                    var src = args[1];
+                    if (args.length > 3) {
+                      src = args[1] + ':' + args[2];
+                    }
+                    var script = document.createElement('script');
+                    script.src = src;
+                    script.type = 'text/javascript';
+                    document.body.appendChild(script);
+                    break;
+                  case "exitFullscreen":
+                    if (window.document.exitFullscreen) window.document.exitFullscreen();
+                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
+                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
+                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
+                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
+                    break;
+                }
+                var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+                if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                  var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
+                  iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
+                }
+              };
+              window.isPermitted = function (originUrl, whitelisted_domains) {
+                var url = document.createElement('a');
+                url.href = originUrl;
+                var hostname = url.hostname;
+                var result = false;
+                if (typeof hostname !== 'undefined') {
+                  whitelisted_domains.forEach(function (element) {
+                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
+                      result = true;
+                    }
+                  });
+                  return result;
+                }
+              };
+              if (window.addEventListener) {
+                window.addEventListener("message", handleIFrameMessage, false);
+              } else if (window.attachEvent) {
+                window.attachEvent("onmessage", handleIFrameMessage);
+              }
+            </script>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 
@@ -734,17 +902,19 @@
       <div class="social-links">
         <a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i></a>
         <a href="https://github.com/mrmark1998" class="github"><i class="bx bi-github" title="GitHub"></i></a>
-        <a href="https://www.linkedin.com/in/mikemark66/" class="linkedin"><i class="bx bxl-linkedin" title="LinkedIn"></i></a>
+        <a href="https://www.linkedin.com/in/mikemark66/" class="linkedin"><i class="bx bxl-linkedin"
+            title="LinkedIn"></i></a>
         <a href="#contact" class="google-plus"><i class="bi bi-envelope" title="Contact"></i></i></a>
       </div>
       <div class="copyright">
-        &copy; 2022 <strong><span>Michael Mark </span></strong>. Photo of personal private lake in Dayton, MI.
+        &copy; 2024 <strong><span>Michael Mark </span></strong>. Photo of personal private lake in Dayton, MI.
       </div>
     </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
