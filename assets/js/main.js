@@ -4,10 +4,10 @@ showRealEstate = () => {
         document.getElementById("realestate").innerHTML = `
             <div class="row about">
                 <div class="col-lg-6 mt-4">
-                    <img src="/assets/img/berkshire-office.png" class="img-fluid" alt="Berkshire Hathaway HomeServices - Real Estate One Professionals" />
+                    <img src="/assets/img/berkshire-office.png" class="img-fluid" alt="Berkshire Hathaway HomeServices - Real Estate Professionals" />
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 mt-4 content">
-                    <a href="https://www.bhhs.com/michigan-real-estate-mi301/saginaw/oid-mi301-046" title="Berkshire Hathaway HomeServices - Real Estate One Professionals" target="_blank"><h3>Berkshire Hathaway HomeServices - Saginaw, MI</h3></a>
+                    <a href="https://www.bhhs.com/michigan-real-estate-mi301/saginaw/oid-mi301-046" title="Berkshire Hathaway HomeServices - Real Estate Professionals" target="_blank"><h3>Berkshire Hathaway HomeServices - Saginaw, MI</h3></a>
                     <p>
                         2825 Bay Rd<br>
                         Saginaw, MI 48603
