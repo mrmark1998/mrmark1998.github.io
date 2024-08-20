@@ -4,19 +4,19 @@ showRealEstate = () => {
         document.getElementById("realestate").innerHTML = `
             <div class="row about">
                 <div class="col-lg-6 mt-4">
-                    <img src="/assets/img/real-estate-one-office.jpg" class="img-fluid" alt="Saginaw - Real Estate One Great Lakes Bay - Real Estate One Professionals" />
+                    <img src="/assets/img/berkshire-office.png" class="img-fluid" alt="Berkshire Hathaway HomeServices - Real Estate One Professionals" />
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 mt-4 content">
-                    <a href="https://www.realestateone.com/vp/AgentServlet?ScreenID=OFFICE_DETAIL_P&SITE=REO&A_CD_COMPANY=REO&context=DC_OFFICE_DETAIL_VIEW&cd_Office=029263" title="Real Estate One - Great Lakes Bay" target="_blank"><h3>Real Estate One Great Lakes Bay - Saginaw</h3></a>
+                    <a href="https://www.bhhs.com/michigan-real-estate-mi301/saginaw/oid-mi301-046" title="Berkshire Hathaway HomeServices - Real Estate One Professionals" target="_blank"><h3>Berkshire Hathaway HomeServices - Saginaw, MI</h3></a>
                     <p>
-                        4300 State St<br>
+                        2825 Bay Rd<br>
                         Saginaw, MI 48603
                     </p>
                     <p class="text-smaller">
                         <a class="link" href="#about" title="About me">Michael Mark</a>Salesperson, Agent<br>
-                        <a class="link" href="https://www.realestateone.com/vp/AgentServlet?ScreenID=OFFICE_DETAIL_P&SITE=REO&A_CD_COMPANY=REO&context=DC_OFFICE_DETAIL_VIEW&cd_Office=029263#manager" title="Manager Details">Julie Williams</a>Broker, Owner</br>
+                        <a class="link" href="https://www.bhhsmichiganrealestate.com/real-estate-agent/101/joy-schneller" title="Manager Details">Joy Scheller</a>Broker, Owner</br>
                         Cell Phone: <a class="link" href="#contact" title="Contact Details">Contact Me</a><br>
-                        Office Phone: 989-607-2100
+                        Office Phone: 989-790-9292
                     </p>
                 </div>
             </div>
